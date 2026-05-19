@@ -18,7 +18,9 @@ The project also includes a Flask-based web application where users can upload E
 - Deep Learning based prediction
 
 ## Dataset Used
-The MIT-BIH Arrhythmia Database is one of the earliest publicly available benchmark datasets used for arrhythmia detection research. It contains ECG recordings collected from long-duration Holter monitor recordings. Each ECG record is represented using three files: a header file (.hea), a signal data file (.dat), and an annotation file (.atr). The dataset is widely used for training and evaluating machine learning and deep learning models for heartbeat classification and arrhythmia prediction.
+The MIT-BIH Arrhythmia Database is one of the earliest publicly available benchmark datasets used for arrhythmia detection research. It contains ECG recordings collected from long-duration Holter monitor recordings. Each ECG record is represented using three files: a header file (.hea), a signal data file (.dat), and an annotation file (.atr). The dataset is widely used for training and evaluating machine learning and deep learning models for heartbeat classification and arrhythmia prediction. 
+Dataset Link:
+https://physionet.org/content/mitdb/1.0.0/
 
 ## Model Information
 The project uses a Convolutional Neural Network (CNN) model for ECG heartbeat classification and arrhythmia detection. The CNN model is trained on ECG signal segments extracted from the MIT-BIH Arrhythmia Dataset.
