@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arrhythmia Detection</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef4ff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 600px;
+            margin: 60px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h1 {
+            color: #1e3a8a;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 95%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 8px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 12px 30px;
+            font-size: 16px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 15px;
+            background: #f0fdf4;
+            color: #166534;
+            border: 1px solid #86efac;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .note {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Arrhythmia Detection System</h1>
+
+    <p>Upload MIT-BIH ECG record files</p>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+
+        <label>Upload .dat File</label>
+        <input type="file" name="dat_file" accept=".dat" required>
+
+        <label>Upload .hea File</label>
+        <input type="file" name="hea_file" accept=".hea" required>
+
+        <label>Enter Start Index</label>
+        <input type="number" name="start_index" placeholder="Example: 1000" required>
+
+        <button type="submit">Predict Arrhythmia</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <p>Class Symbol: {{ symbol }}</p>
+        <p>Prediction: {{ result }}</p>
+        <p>Status: {{ status }}</p>
+    </div>
+    {% endif %}
+
+    <div class="note">
+        Note: This project is for educational purposes only, not for medical diagnosis.
+    </div>
+</div>
+
+</body>
+</html>
